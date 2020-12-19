@@ -1,6 +1,7 @@
 function price (){
   const path = location.pathname
-  if(path.includes("items/new") || path.includes("items") && path.includes("edit"){
+  const editPath = path.includes("items") && path.includes("edit")
+  if(path.includes("items/new") ||  editPath){
     console.log("price_calc.js起動中")
     const inputPrice = document.getElementById("item-price");
     const addTax = document.getElementById("add-tax-price");
