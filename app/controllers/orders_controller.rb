@@ -11,11 +11,11 @@ class OrdersController < ApplicationController
   end
 
   def create
-    
     @item_order = PayForm.new(item_order_params)
     if @item_order.valid?
       pay_item
       @item_order.save
+      # PayForm.newを使ってるけど、DBにあるわけじゃない。PayFormモデルに行って自作のsaveメソッドを呼んでくる
       redirect_to root_path
     else
       render 'index'

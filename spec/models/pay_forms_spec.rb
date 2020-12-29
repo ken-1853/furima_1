@@ -8,7 +8,6 @@ RSpec.describe PayForm, type: :model do
     sleep 0.5
     @pay_form = FactoryBot.build(:pay_form, user_id: buyer.id, item_id: item.id)
 
-
   end
   # 正常系テスト
   describe '商品購入' do
@@ -67,6 +66,8 @@ RSpec.describe PayForm, type: :model do
         @pay_form.valid?
         expect(@pay_form.errors.full_messages).to include('Phone number Too long')
       end
+
+      # 購入者とitemがそれぞれない場合　_idを消せばいい
     end
   end
 end

@@ -22,7 +22,7 @@ class User < ApplicationRecord
 
 
   # 全角のカタカナ以外を使用していないか検証
-  with_options presence: true, format: { with: /\A[\p{katakana}　ー－&&[^ -~｡-ﾟ]]+\z/, message: 'Full-width katakana characters' } do
+  with_options presence: true, format: { with: /\A[\p{katakana} ー－&&[^ -~｡-ﾟ]]+\z/, message: 'Full-width katakana characters' } do
     validates :first_name_kana
     validates :last_name_kana
   end

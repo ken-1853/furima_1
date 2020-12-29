@@ -1,7 +1,7 @@
 function price (){
-  const path = location.pathname
-  const editPath = path.includes("items") && path.includes("edit")
-  if(path.includes("items/new") ||  editPath){
+  // const path = location.pathname
+  // const editPath = path.includes("items") && path.includes("edit")
+  // if(path.includes("items/new") ||  editPath){
     console.log("price_calc.js起動中")
     const inputPrice = document.getElementById("item-price");
     const addTax = document.getElementById("add-tax-price");
@@ -13,11 +13,9 @@ function price (){
       profit.innerHTML = Math.floor(itemPrice * 0.9);
       // Mathオブジェクトのfloor()メソッドは、小数点以下を切り捨てます。
       // 引数には数値を指定します。 文字列を指定すると NaN を返します
-
       // 正規表現でNaNを回避する
-
     });
-  }
+  // }
 }
 
-setInterval(price, 1000);
+window.addEventListener("load",price);

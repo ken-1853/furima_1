@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Item, type: :model do
   before do
-    user = FactoryBot.create(:user)
-    @item = FactoryBot.build(:item, user_id: user.id)
+    # user = FactoryBot.create(:user)
+    # ↑アソシエーションをくんでいるので上記は必要ない
+    @item = FactoryBot.build(:item)
   end
   describe '商品作成' do
     context '内容に問題ない場合' do

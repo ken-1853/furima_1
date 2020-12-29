@@ -18,8 +18,9 @@ function card() {
         exp_month: formData.get("exp_month"),
         exp_year: `20${formData.get("exp_year")}`,
         // payJp側で指定したキーじゃないといけない
-      };
-  
+      }
+      // セミコロン抜けでエラーが起こる場合も
+
       console.log(card)
   
       Payjp.createToken(card, (status, response) => {
@@ -37,10 +38,7 @@ function card() {
           renderDom.insertAdjacentHTML("beforeend", tokenObj);
         }else{
           window.alert('購入処理に失敗しました。\nお手数ですが最初からやり直してください。');
-  
         }
-  
-  
         // フォームに存在するクレジットカードの各情報を削除する。サーバーサイドに情報を送りたくないので。
         document.getElementById("card-number").removeAttribute("name");
         // getElementByIdでそれぞれの入力フォームを指定したのち、name属性を削除（nameはその値を示すプロパティ名）

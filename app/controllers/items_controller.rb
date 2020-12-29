@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to action: :show
     else
-      @item = Prototype.new(item_params)
+      @item = Item.new(item_params)
       render :edit
     end
   end
@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
     if @item.destroy
       redirect_to root_path
     else
-      @item = Prototype.new(item_params)
+      @item = Item.new(item_params)
       render :edit
     end
   end
