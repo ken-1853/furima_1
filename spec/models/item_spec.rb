@@ -12,7 +12,6 @@ RSpec.describe Item, type: :model do
         expect(@item).to be_valid
       end
     end
-
     context '内容に問題がある場合' do
       it 'image:必須' do
         @item.image = nil
@@ -39,7 +38,6 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price Out of setting range")
       end
-
       it 'price:範囲指定' do
         @item.price = 10000000
         @item.valid?
