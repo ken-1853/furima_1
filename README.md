@@ -64,3 +64,6 @@ has_one :Address
 
 ### Association
 belongs_to :Order
+
+
+S3はマスターで編集するらしいので、これがS3ブランチ最後の編集です
