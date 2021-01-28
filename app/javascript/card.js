@@ -3,7 +3,7 @@ function card() {
   if(path.includes("items") && path.includes("orders")){
     console.log("payjp.js起動中")
     Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);
-    // ↑のpayjpはgemが入っていなくても使える
+    // ↑のpayjpはgemが入っていなくても使える。application.htmlでライブラリの読み込みを行なっているから
     
     const form = document.getElementById("charge-form")
     form.addEventListener("submit",(e)=>{
@@ -52,7 +52,6 @@ function card() {
     
     });
   }
- 
 };
 
 window.addEventListener("load",card);
