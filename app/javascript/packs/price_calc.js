@@ -18,3 +18,4 @@ function price (){
 }
 
 window.addEventListener("load",price);
+

@@ -21,7 +21,7 @@ function card() {
       }
       // セミコロン抜けでエラーが起こる場合も
 
-      console.log(card)
+
   
       Payjp.createToken(card, (status, response) => {
   
